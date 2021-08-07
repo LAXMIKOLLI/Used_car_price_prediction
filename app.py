@@ -12,13 +12,13 @@ model = open('model_rf_reg.pkl', 'rb')  # loading our predicted model
 regressor_model = pickle.load(model)
 
 
-@app.route('/')
+@app.route("/")
 @cross_origin()
 def home():
     return render_template("index.html")
 
 
-@app.route('/predict', methods=['POST'])
+@app.route("/predict", methods=["GET","POST"])
 @cross_origin()
 def predict():
     # city
@@ -50,7 +50,7 @@ def predict():
     ThirdParty = 0
     ZeroDepreciation = 0
 
-    if request.method == 'POST':
+    if request.method == "POST":
         company_name = request.form['brand']
 
         model_name = request.form['Model']
