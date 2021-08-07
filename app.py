@@ -12,7 +12,7 @@ model = open('model_rf_reg.pkl', 'rb')  # loading our predicted model
 regressor_model = pickle.load(model)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 @cross_origin()
 def home():
     return render_template("index.html")
