@@ -4,6 +4,7 @@
 from flask import Flask, render_template, request
 from flask_cors import cross_origin
 import pickle
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -96,7 +97,7 @@ def predict():
             Automatic = 1
 
         Year = request.form['Year']
-        car_life = 2021 - int(Year)
+        car_life = datetime.now().year - int(Year)
 
         Kms = request.form['Kms']
 
