@@ -11,6 +11,7 @@ app = Flask(__name__)
 
 model = open('model_rf_reg.pkl', 'rb')  # loading our predicted model
 regressor_model = pickle.load(model)
+model.close()
 
 
 @app.route("/")
