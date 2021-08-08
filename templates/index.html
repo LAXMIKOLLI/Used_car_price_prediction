@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 8px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 2px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+</style>
+<body style="background-color:powderblue;">
+
+<h3 style="font-family:verdana">Used Car Price Prediction</h3>
+
+<div>
+  <form action="\predict" method="post">
+
+    <label style="font-family:verdana" for="Brand">Brand</label>
+    <select name="brand" id="brand" required="required">
+        <option value="5">Maruti</option>
+        <option value="3">Hyundai</option>
+        <option value="2">Honda</option>
+        <option value="8">Toyota</option>
+        <option value="9">Volkswagen</option>
+        <option value="7">Renault</option>
+        <option value="1">Ford</option>
+        <option value="4">Mahindra</option>
+        <option value="6">Mercedes</option>
+        <option value="0">BMW</option>
+
+    </select>
+
+    <label style="font-family:verdana" for="model">Model</label>
+    <select name="Model" id="Model" required="required">
+        <option value="85">Wagon R 1.0</option>
+        <option value="2">Alto 800 LXI</option>
+        <option value="5">Alto K10 VXI</option>
+        <option value="70">Swift Dzire VDI</option>
+        <option value="74">Swift VDI</option>
+        <option value="95">i10 MAGNA 1.2</option>
+        <option value="76">Swift VXI</option>
+        <option value="30">Eeco 5 STR</option>
+        <option value="6">Alto LXI</option>
+        <option value="71">Swift Dzire VXI</option>
+        <option value="96">i10 SPORTZ 1.2</option>
+        <option value="81">Verna FLUIDIC 1.6</option>
+        <option value="83">Vitara Brezza ZDI</option>
+        <option value="23">Creta 1.6 SX</option>
+        <option value="11">Baleno DELTA 1.2</option>
+        <option value="31">Elite i20 ASTA</option>
+        <option value="47">Grand i10 SPORTZ</option>
+        <option value="75">Swift VDI ABS</option>
+        <option value="82">Vitara Brezza VDIz</option>
+        <option value="45">Grand i10 MAGNA</option>
+        <option value="17">i20 SPORTZ 1.2</option>
+        <option value="100">City S MT</option>
+        <option value="33">Elite i20 SPORTZ</option>
+        <option value="19">City V MT</option>
+        <option value="68">Santro Xing GLS</option>
+        <option value="35">Eon ERA PLUS</option>
+        <option value="4">i20 MAGNA O</option>
+        <option value="99">Alto K10 LXI</option>
+        <option value="44">Ritz VXI BS</option>
+        <option value="62">Grand i10 ASTA</option>
+        <option value="65">Polo HIGHLINE1.2L</option>
+        <option value="14">Brio 1.2 S</option>
+        <option value="12">Baleno ZETA 1.2</option>
+        <option value="50">Innova 2.5 GX</option>
+        <option value="94">i10 MAGNA 1.1</option>
+        <option value="79">Vento HIGHLINE</option>
+        <option value="64">Ritz VDI</option>
+        <option value="67">Santro Xing GL</option>
+        <option value="52">Innova 2.5 VX</option>
+        <option value="89">Celerio VXI</option>
+        <option value="15">XUV500 W8 FWD</option>
+        <option value="36">Wagon R LXI</option>
+        <option value="86">Swift ZDI</option>
+        <option value="77">Eon MAGNA PLUS</option>
+        <option value="78">Swift ZXI</option>
+        <option value="56">Kwid RXT</option>
+        <option value="7">Swift Dzire ZDI</option>
+        <option value="72">Swift Dzire LDI</option>
+        <option value="69">Amaze 1.2 SMT</option>
+        <option value="29">A Star VXI</option>
+        <option value="1">Ecosport 1.5TITANIUM TDCI</option>
+        <option value="49">Innova 2.5 G4</option>
+        <option value="97">i20 ASTA 1.2</option>
+        <option value="101">Celerio VXI AMT</option>
+        <option value="3">Alto 800 VXI</option>
+        <option value="38">i20 SPORTZ 1.4</option>
+        <option value="16">Ertiga VDI SHVS</option>
+        <option value="25">Grand i10 SPORTS</option>
+        <option value="46">Dzire VDI</option>
+        <option value="54">City VX MT</option>
+        <option value="58">Jazz 1.2 V</option>
+        <option value="66">Kwid RXT Opt</option>
+        <option value="20">i10 ERA 1.1</option>
+        <option value="93">S Cross ZETA</option>
+        <option value="37">Duster 85 PS</option>
+        <option value="24">Ertiga VDI ABS</option>
+        <option value="42">Etios Liva GD</option>
+        <option value="26">Verna 1.6 SX</option>
+        <option value="80">Dzire VXI</option>
+        <option value="13">Creta 1.6 CRDI</option>
+        <option value="22">Ritz LXI</option>
+        <option value="63">OMNI E 8</option>
+        <option value="59">Amaze 1.5 SMT</option>
+        <option value="8">Benz C Class</option>
+        <option value="53">Innova Crysta 2.4</option>
+        <option value="61">Fortuner 3.0 MT</option>
+        <option value="60">Polo COMFORTLINE 1.2L</option>
+        <option value="88">XUV500 W6 4X2</option>
+        <option value="48">Ecosport 1.5 TITANIUM</option>
+        <option value="43">Swift LXI</option>
+        <option value="41">IGNIS DELTA 1.2</option>
+        <option value="73">Polo GT TSI</option>
+        <option value="91">Zen Estilo VXI</option>
+        <option value="27">Etios Liva G</option>
+        <option value="18">Elite i20 MAGNA</option>
+        <option value="28">City SV MT</option>
+        <option value="32">Innova 2.5 V</option>
+        <option value="0">Ecosport 1.5 TREND</option>
+        <option value="9">3 Series 320D</option>
+        <option value="51">Baleno ALPHA 1.2</option>
+        <option value="34">Baleno ALPHA DDIS</option>
+        <option value="40">Kwid RXL</option>
+        <option value="57">i10 ERA</option>
+        <option value="39">Eon D LITE</option>
+        <option value="87">Etios Liva D</option>
+        <option value="84">Ertiga ZDI</option>
+        <option value="21">Wagon R VXI</option>
+        <option value="90">Kwid RXT 1.0</option>
+        <option value="92">Corolla Altis VL</option>
+        <option value="10">Zen Estilo LXI</option>
+        <option value="98">i20 MAGNA 1.2</option>
+        <option value="55">WR-V 1.2 i-VTEC</option>
+
+    </select>
+
+    <label style="font-family:verdana" for="City">City</label>
+    <select name="city" id="city" required="required">
+        <option value="NewDelhi">NewDelhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Pune">Pune</option>
+        <option value="Noida">Noida</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Gurgaon">Gurgaon</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+    </select>
+
+    <label style="font-family:verdana" for="Fuel">Fuel Type</label>
+    <select name="fuel" id="fuel" required="required">
+        <option value="PetrolCNG">Petrol+CNG</option>
+        <option value="Diesel">Diesel</option>
+        <option value="PetrolLPG">Petrol+LPG</option>
+        <option value="Petrol">Petrol</option>
+    </select>
+
+    <label style="font-family:verdana" for="year">Purchase Year</label>
+    <input type="number" id="Year" name="Year" placeholder="Purchase Year" required="required">
+
+    <label style="font-family:verdana" for="kms">Kilometers Driven</label>
+    <input type="number" id="Kms" name="Kms" placeholder="Kms Driven" required="required">
+
+
+    <label style="font-family:verdana" for="transmission">Transmission</label>
+    <select name="Transmission" id="Transmission" required="required">
+        <option value="Automatic">Automatic</option>
+        <option value="Manual">Manual</option>
+    </select>
+
+    <label style="font-family:verdana" for="owner">Owner Type</label>
+    <select id="Owner" name="Owner" required="required">
+      <option value=1>First</option>
+      <option value=2>Second</option>
+      <option value=3>Third</option>
+      <option value=4>Fourth</option>
+    </select>
+
+    <label style="font-family:verdana" for="Insurance">Insurance Type</label>
+    <select name="insurance" id="insurance" required="required">
+        <option value="comprehensive">comprehensive</option>
+        <option value="InsuranceExpired">InsuranceExpired</option>
+        <option value="NotAvailable">NotAvailable</option>
+        <option value="ThirdParty">ThirdParty</option>
+        <option value="ZeroDepreciation">ZeroDepreciation</option>
+    </select>
+
+    <input style="font-family:verdana" type="submit" value="Submit">
+  </form>
+  <h4 style="font-family:verdana">{{ prediction_text }}</h4>
+
+   <br>
+<!--   <p style="font-family:arial"><a href="https://github.com/Animesh1911/Used-Car-Price-Prediction">Github</a></p>-->
+</div>
+
+</body>
+</html>
